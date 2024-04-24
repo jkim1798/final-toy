@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6ebersfy34fg"]
+[gd_scene load_steps=5 format=3 uid="uid://c6ebersfy34fg"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_i76ug"]
+[ext_resource type="Texture2D" uid="uid://bbwh7gaj78675" path="res://assets/monochrome-transparent_packed.png" id="2_gnfp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ww6mj"]
 radius = 2.0
@@ -22,5 +23,13 @@ collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_8f18i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0.266667, 1)
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("2_gnfp2")
+region_enabled = true
+region_rect = Rect2(404, 196, 8, 8)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
